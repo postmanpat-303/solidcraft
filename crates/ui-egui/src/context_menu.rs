@@ -3358,6 +3358,27 @@ mod tests {
         assert!(!h.app.menu.radial, "browser menus remain lists when radial menus are enabled");
     }
 
+    /// #12269: with the Inventor mapping (a right drag orbits) and the radial context menu
+    /// on, a right-click on a solid body crashed the app. A still click must open the menu,
+    /// and so must the press-hold flick.
+    #[test]
+    fn inventor_right_click_on_a_body_opens_the_radial_menu() {
+        let mut h = crate::scenario::Harness::new();
+        h.app.home.open = false;
+        h.app.run("solid.cylinder", json!({"diameter":30,"height":20})).unwrap();
+        h.app.preferences.nav = "inventor".into();
+        h.call("ui.prefs", json!({"radial_context_menu": true}));
+        h.settle();
+        let side = h.at(&json!({"world":[15,0,10]})).unwrap();
+        h.step(&json!({"click":side,"button":"right"})).unwrap();
+        assert!(h.app.viewport.context_menu.is_some(), "a still right-click on a body opens the menu");
+        assert_eq!(describe(&h.app)["radial"].as_array().unwrap().len(), DIRS);
+        close(&mut h.app);
+        h.step(&json!({"hold":side,"frames":40})).unwrap();
+        assert!(h.app.viewport.context_menu.is_some(), "holding the right button still opens the radial menu");
+        assert!(h.app.menu.radial);
+    }
+
     #[test]
     fn disabled_radial_menu_does_not_capture_right_button_hold() {
         let mut app = SolveApp::new(solidcraft_engine::Session::default(), Default::default());
