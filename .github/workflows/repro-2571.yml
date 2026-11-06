@@ -1,0 +1,40 @@
+name: repro-2571
+# Temporary workflow on the fork only: run the ui-egui harness test that picks an
+# installed interface font family in Preferences (#2571) and publish the output.
+on:
+  push:
+    branches: [fix/2571-prefs-font]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: repro-2571
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pkg-config fonts-dejavu-core \
+            libwayland-dev libxkbcommon-dev libxkbcommon-x11-dev libdbus-1-dev \
+            libasound2-dev libudev-dev libxcb1-dev libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev
+      - name: Run the font-pick tests
+        run: |
+          cargo test -p solidcraft-ui-egui --lib picking_a -- --nocapture --test-threads 1 2>&1 | tee result.txt
+      - name: Publish result
+        if: always()
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "github-actions"
+          git fetch origin repro-result-2571 || true
+          if git rev-parse --verify --quiet FETCH_HEAD; then git checkout -B repro-result-2571 FETCH_HEAD; else git checkout -B repro-result-2571; fi
+          git add -f result.txt || true
+          git commit -m "2571 test result" || true
+          git push -f origin repro-result-2571
