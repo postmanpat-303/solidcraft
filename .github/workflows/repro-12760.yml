@@ -20,7 +20,11 @@ jobs:
         with:
           key: repro-12760
       - name: Run the regression test
-        run: cargo test -p solidcraft-engine an_inserted_design_measures_the_same_as_its_source -- --nocapture --exact cmd::component_link::tests::an_inserted_design_measures_the_same_as_its_source 2>&1 | tee result.txt
+        run: |
+          {
+            cargo test -p solidcraft-engine insert_measure_diagnostic -- --nocapture
+            cargo test -p solidcraft-engine an_inserted_design_measures_the_same_as_its_source -- --nocapture --exact cmd::component_link::tests::an_inserted_design_measures_the_same_as_its_source
+          } 2>&1 | tee result.txt
       - name: Publish result
         if: always()
         run: |

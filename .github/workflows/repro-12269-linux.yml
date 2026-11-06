@@ -1,0 +1,53 @@
+name: repro-12269-linux
+# Temporary workflow on the fork only: run the real desktop app under Xvfb with
+# software Vulkan and drive the gestures from #12269 (radial context menu on,
+# right-click / press-hold on a solid body) through the control channel, then
+# publish the log to the repro-result branch.
+on:
+  push:
+    branches: [fix/12269-radial-inventor]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repro:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: repro-12269-linux
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y xvfb mesa-vulkan-drivers libvulkan1 pkg-config \
+            libwayland-dev libxkbcommon-dev libxkbcommon-x11-dev libdbus-1-dev \
+            libasound2-dev libudev-dev libxcb1-dev libxcb-render0-dev libxcb-shape0-dev libxcb-xfixes0-dev
+      - name: Build the app
+        run: cargo build --release -p solidcraft
+      - name: Start the virtual display
+        run: |
+          Xvfb :99 -screen 0 1920x1200x24 &
+          sleep 2
+      - name: Reproduce #12269
+        env:
+          DISPLAY: :99
+          WGPU_BACKEND: vulkan
+        run: python3 .github/repro-12269.py 2>&1 | tee linux-result.txt
+      - name: Publish result
+        if: always()
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "github-actions"
+          found=$(find /home/runner /tmp -name 'shot-menu.png' 2>/dev/null | head -1)
+          [ -n "$found" ] && cp "$found" shot-menu.png
+          git fetch origin repro-result || true
+          if git rev-parse --verify --quiet FETCH_HEAD; then git checkout -B repro-result FETCH_HEAD; else git checkout -B repro-result; fi
+          git add -f linux-result.txt app.log || true
+          git add -f shot-menu.png || true
+          git commit -m "linux repro result" || true
+          git push -f origin repro-result

@@ -1,0 +1,40 @@
+name: repro-12269
+# Temporary workflow on the fork only: build the ui-egui test binary and run the
+# regression test for #12269, then publish the output to the repro-result branch.
+on:
+  push:
+    branches: [fix/12269-radial-inventor]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repro:
+    runs-on: windows-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: repro-12269
+      - name: Run the repro test
+        shell: pwsh
+        run: |
+          cargo test --profile ci -p solidcraft-ui-egui context_menu:: -- --nocapture *> result.txt
+          "exit=$LASTEXITCODE" | Out-File -Append result.txt
+      - name: Publish result
+        if: always()
+        shell: pwsh
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "github-actions"
+          git fetch origin repro-result 2>$null
+          git rev-parse --verify --quiet FETCH_HEAD
+          if ($LASTEXITCODE -eq 0) { git checkout -B repro-result FETCH_HEAD } else { git checkout -B repro-result }
+          git add -f result.txt
+          git commit -m "repro result"
+          git push -f origin repro-result

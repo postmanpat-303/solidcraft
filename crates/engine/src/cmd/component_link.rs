@@ -1026,6 +1026,33 @@ mod tests {
         let _ = std::fs::remove_dir_all(&dir);
     }
 
+    /// Temporary diagnostic for #12760, not for upstream: the same tube built next to the
+    /// origin, to tell a coordinate-magnitude integration error from a profile mix-up.
+    #[test]
+    fn insert_measure_diagnostic_near_origin() {
+        let dir = std::env::temp_dir().join(format!("solidcraft-insert-measure-origin-{}", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let part = dir.join("teil.solidcraft");
+        let mut src = Session::default();
+        run(&mut src, "sketch.create", json!({"plane": "XY", "name": "Path"}));
+        run(&mut src, "sketch.options", json!({"sketch_3d": true}));
+        run(&mut src, "sketch.line3d", json!({"points": [[0, 447, 0], [4274.438162, 447, 2730.158647]]}));
+        run(&mut src, "sketch.finish", json!({}));
+        run(
+            &mut src,
+            "frame.member",
+            json!({"sketch": "Path", "profile": {"kind": "round_tube", "diameter": 42.4, "wall": 2.6}, "anchor": "center", "body_name": "R"}),
+        );
+        let source = run(&mut src, "inspect.measure", json!({}));
+        run(&mut src, "file.save", json!({"path": part}));
+        let mut s = Session::default();
+        run(&mut s, "component.insert_design", json!({"path": part}));
+        let inserted = run(&mut s, "inspect.measure", json!({}));
+        println!("NEAR-ORIGIN source: {source}");
+        println!("NEAR-ORIGIN inserted: {inserted}");
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
     #[test]
     fn recovered_relative_links_keep_their_targets_after_save_as() {
         let dir = std::env::temp_dir().join(format!("solidcraft-link-recovery-{}", std::process::id()));
