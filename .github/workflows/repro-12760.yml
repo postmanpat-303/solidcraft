@@ -30,8 +30,11 @@ jobs:
         run: |
           git config user.email "actions@github.com"
           git config user.name "github-actions"
+          cp result.txt /tmp/result.txt
+          rm -f result.txt
           git fetch origin repro-12760-result || true
           if git rev-parse --verify --quiet FETCH_HEAD; then git checkout -B repro-12760-result FETCH_HEAD; else git checkout -B repro-12760-result; fi
+          cp /tmp/result.txt result.txt
           git add -f result.txt || true
           git commit -m "repro-12760 result" || true
           git push -f origin repro-12760-result
