@@ -992,6 +992,40 @@ mod tests {
         }
     }
 
+    /// #12760: an inserted design measures as it does in its source. A round-tube frame
+    /// member read 14 % more volume once inserted, and its centre of mass moved; the
+    /// geometry is the same, so its mass properties must be too.
+    #[test]
+    fn an_inserted_design_measures_the_same_as_its_source() {
+        let dir = std::env::temp_dir().join(format!("solidcraft-insert-measure-{}", std::process::id()));
+        std::fs::create_dir_all(&dir).unwrap();
+        let part = dir.join("teil.solidcraft");
+        let mut src = Session::default();
+        run(&mut src, "sketch.create", json!({"plane": "XY", "name": "Path"}));
+        run(&mut src, "sketch.options", json!({"sketch_3d": true}));
+        run(&mut src, "sketch.line3d", json!({"points": [[4805.058271, 447, 3740.849768], [9079.496433, 447, 6471.008415]]}));
+        run(&mut src, "sketch.finish", json!({}));
+        run(
+            &mut src,
+            "frame.member",
+            json!({"sketch": "Path", "profile": {"kind": "round_tube", "diameter": 42.4, "wall": 2.6}, "anchor": "center", "body_name": "R"}),
+        );
+        let source = run(&mut src, "inspect.measure", json!({}));
+        run(&mut src, "file.save", json!({"path": part}));
+        let mut s = Session::default();
+        run(&mut s, "component.insert_design", json!({"path": part}));
+        let inserted = run(&mut s, "inspect.measure", json!({}));
+        for key in ["volume_mm3", "area_mm2"] {
+            let (a, b) = (source["total"][key].as_f64().unwrap_or(f64::NAN), inserted["total"][key].as_f64().unwrap_or(f64::NAN));
+            assert!((b - a).abs() <= a.abs() * 1e-3, "{key}: source {a}, inserted {b}\nsource: {source}\ninserted: {inserted}");
+        }
+        assert_eq!(
+            inserted["bodies"][0]["center_of_mass"], source["bodies"][0]["center_of_mass"],
+            "centre of mass\nsource: {source}\ninserted: {inserted}"
+        );
+        let _ = std::fs::remove_dir_all(&dir);
+    }
+
     #[test]
     fn recovered_relative_links_keep_their_targets_after_save_as() {
         let dir = std::env::temp_dir().join(format!("solidcraft-link-recovery-{}", std::process::id()));
