@@ -1026,31 +1026,49 @@ mod tests {
         let _ = std::fs::remove_dir_all(&dir);
     }
 
-    /// Temporary diagnostic for #12760, not for upstream: the same tube built next to the
-    /// origin, to tell a coordinate-magnitude integration error from a profile mix-up.
+    /// Temporary diagnostic for #12760, not for upstream: the same tube far from the origin
+    /// (the report's case) and next to it, to tell a coordinate-magnitude integration error
+    /// from a profile mix-up, plus the surfaces the link's STEP round-trip hands SMLib.
     #[test]
     fn insert_measure_diagnostic_near_origin() {
-        let dir = std::env::temp_dir().join(format!("solidcraft-insert-measure-origin-{}", std::process::id()));
-        std::fs::create_dir_all(&dir).unwrap();
-        let part = dir.join("teil.solidcraft");
-        let mut src = Session::default();
-        run(&mut src, "sketch.create", json!({"plane": "XY", "name": "Path"}));
-        run(&mut src, "sketch.options", json!({"sketch_3d": true}));
-        run(&mut src, "sketch.line3d", json!({"points": [[0, 447, 0], [4274.438162, 447, 2730.158647]]}));
-        run(&mut src, "sketch.finish", json!({}));
-        run(
-            &mut src,
-            "frame.member",
-            json!({"sketch": "Path", "profile": {"kind": "round_tube", "diameter": 42.4, "wall": 2.6}, "anchor": "center", "body_name": "R"}),
-        );
-        let source = run(&mut src, "inspect.measure", json!({}));
-        run(&mut src, "file.save", json!({"path": part}));
-        let mut s = Session::default();
-        run(&mut s, "component.insert_design", json!({"path": part}));
-        let inserted = run(&mut s, "inspect.measure", json!({}));
-        println!("NEAR-ORIGIN source: {source}");
-        println!("NEAR-ORIGIN inserted: {inserted}");
-        let _ = std::fs::remove_dir_all(&dir);
+        for (tag, from, to) in [
+            ("FAR", [4805.058271, 447.0, 3740.849768], [9079.496433, 447.0, 6471.008415]),
+            ("NEAR", [0.0, 447.0, 0.0], [4274.438162, 447.0, 2730.158647]),
+        ] {
+            let dir = std::env::temp_dir().join(format!("solidcraft-insert-measure-{tag}-{}", std::process::id()));
+            std::fs::create_dir_all(&dir).unwrap();
+            let part = dir.join("teil.solidcraft");
+            let mut src = Session::default();
+            run(&mut src, "sketch.create", json!({"plane": "XY", "name": "Path"}));
+            run(&mut src, "sketch.options", json!({"sketch_3d": true}));
+            run(&mut src, "sketch.line3d", json!({"points": [from, to]}));
+            run(&mut src, "sketch.finish", json!({}));
+            run(
+                &mut src,
+                "frame.member",
+                json!({"sketch": "Path", "profile": {"kind": "round_tube", "diameter": 42.4, "wall": 2.6}, "anchor": "center", "body_name": "R"}),
+            );
+            let source = run(&mut src, "inspect.measure", json!({}));
+            run(&mut src, "file.save", json!({"path": part}));
+            let mut s = Session::default();
+            run(&mut s, "component.insert_design", json!({"path": part}));
+            let inserted = run(&mut s, "inspect.measure", json!({}));
+            println!("{tag} source: {source}");
+            println!("{tag} inserted: {inserted}");
+            if tag == "FAR" {
+                // The surfaces SMLib sees after the round-trip: the link's STEP text.
+                let world = src.world_state().unwrap();
+                let solids: Vec<String> = world.bodies.iter().filter(|b| !b.body.is_mesh()).map(|b| b.name.clone()).collect();
+                let step = solidcraft_io::export(&src.doc.painted_for_link(&world), &solids, solidcraft_io::Format::Step, "teil").unwrap();
+                let step = String::from_utf8(step).unwrap();
+                for line in step.lines().filter(|l| {
+                    l.contains("CYLINDRICAL_SURFACE") || l.contains("=PLANE(") || l.contains("=CIRCLE(") || l.contains("AXIS2_PLACEMENT_3D")
+                }) {
+                    println!("STEP {}", line.trim());
+                }
+            }
+            let _ = std::fs::remove_dir_all(&dir);
+        }
     }
 
     #[test]
