@@ -3441,11 +3441,7 @@ mod tests {
     /// content rect degenerate; the radial menu's list placement must not panic on it.
     #[test]
     fn list_place_tolerates_a_degenerate_screen() {
-        for screen in [
-            Rect::ZERO,
-            Rect::from_min_size(Pos2::ZERO, vec2(100.0, 20.0)),
-            Rect::from_min_size(pos2(30.0, 30.0), vec2(0.0, 500.0)),
-        ] {
+        for screen in [Rect::ZERO, Rect::from_min_size(Pos2::ZERO, vec2(100.0, 20.0)), Rect::from_min_size(pos2(30.0, 30.0), vec2(0.0, 500.0))] {
             for h in [0.0, 300.0, 3000.0] {
                 let p = list_place(radial_center(pos2(50.0, 50.0), screen), h, screen);
                 assert!(p.x.is_finite() && p.y.is_finite(), "{screen:?} h={h}: {p:?}");
