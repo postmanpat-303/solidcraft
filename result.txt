@@ -1,0 +1,291 @@
+[1m[92m    Updating[0m crates.io index
+[1m[92m    Updating[0m git repository `https://github.com/tangency-labs/solidcore`
+[1m[92m Downloading[0m crates ...
+[1m[92m  Downloaded[0m adler2 v2.0.1
+[1m[92m  Downloaded[0m block-buffer v0.12.1
+[1m[92m  Downloaded[0m thiserror-impl v2.0.21
+[1m[92m  Downloaded[0m crypto-common v0.1.7
+[1m[92m  Downloaded[0m cpufeatures v0.2.17
+[1m[92m  Downloaded[0m cpufeatures v0.3.1
+[1m[92m  Downloaded[0m byteorder v1.5.0
+[1m[92m  Downloaded[0m digest v0.11.3
+[1m[92m  Downloaded[0m ttf-parser v0.25.1
+[1m[92m  Downloaded[0m thiserror v2.0.21
+[1m[92m  Downloaded[0m toml v1.1.8+spec-1.1.0
+[1m[92m  Downloaded[0m toml_datetime v1.1.2+spec-1.1.0
+[1m[92m  Downloaded[0m cfg-if v1.0.5
+[1m[92m  Downloaded[0m crossbeam-deque v0.8.8
+[1m[92m  Downloaded[0m bitflags v2.13.2
+[1m[92m  Downloaded[0m block-buffer v0.10.4
+[1m[92m  Downloaded[0m const-oid v0.10.2
+[1m[92m  Downloaded[0m crc32fast v1.5.2
+[1m[92m  Downloaded[0m crossbeam-utils v0.8.23
+[1m[92m  Downloaded[0m dyn-clone v1.0.20
+[1m[92m  Downloaded[0m toml_edit v0.25.15+spec-1.1.0
+[1m[92m  Downloaded[0m typenum v1.20.1
+[1m[92m  Downloaded[0m version_check v0.9.5
+[1m[92m  Downloaded[0m zmij v1.0.23
+[1m[92m  Downloaded[0m autocfg v1.5.1
+[1m[92m  Downloaded[0m bytemuck v1.25.2
+[1m[92m  Downloaded[0m bytemuck_derive v1.12.1
+[1m[92m  Downloaded[0m cadmpeg-registry v0.6.7
+[1m[92m  Downloaded[0m chardetng v0.1.17
+[1m[92m  Downloaded[0m crypto-common v0.2.2
+[1m[92m  Downloaded[0m digest v0.10.7
+[1m[92m  Downloaded[0m toml_parser v1.1.5+spec-1.1.0
+[1m[92m  Downloaded[0m twox-hash v2.1.5
+[1m[92m  Downloaded[0m bumpalo v3.20.3
+[1m[92m  Downloaded[0m cadmpeg-core v0.6.7
+[1m[92m  Downloaded[0m either v1.19.0
+[1m[92m  Downloaded[0m hashbrown v0.17.1
+[1m[92m  Downloaded[0m web-time v1.1.0
+[1m[92m  Downloaded[0m zune-core v0.5.3
+[1m[92m  Downloaded[0m core_detect v1.0.0
+[1m[92m  Downloaded[0m crossbeam-epoch v0.9.21
+[1m[92m  Downloaded[0m allocator-api2 v0.2.21
+[1m[92m  Downloaded[0m toml_writer v1.1.3+spec-1.1.0
+[1m[92m  Downloaded[0m unicode-ident v1.0.26
+[1m[92m  Downloaded[0m zune-jpeg v0.5.15
+[1m[92m  Downloaded[0m cadmpeg-codec-step v0.6.7
+[1m[92m  Downloaded[0m unicode-bidi v0.3.18
+[1m[92m  Downloaded[0m weezl v0.1.12
+[1m[92m  Downloaded[0m zlib-rs v0.6.8
+[1m[92m  Downloaded[0m typed-path v0.13.0
+[1m[92m  Downloaded[0m base64 v0.23.1
+[1m[92m  Downloaded[0m zopfli v0.8.3
+[1m[92m  Downloaded[0m cadmpeg-codec-rhino v0.6.7
+[1m[92m  Downloaded[0m winnow v1.0.4
+[1m[92m  Downloaded[0m zip v9.1.3
+[1m[92m  Downloaded[0m serde_derive v1.0.229
+[1m[92m  Downloaded[0m cadmpeg-ir v0.6.7
+[1m[92m  Downloaded[0m png v0.18.1
+[1m[92m  Downloaded[0m lazy_static v1.5.1
+[1m[92m  Downloaded[0m image v0.25.10
+[1m[92m  Downloaded[0m moxcms v0.8.1
+[1m[92m  Downloaded[0m proc-macro2 v1.0.107
+[1m[92m  Downloaded[0m serde_spanned v1.1.2
+[1m[92m  Downloaded[0m foldhash v0.2.0
+[1m[92m  Downloaded[0m miniz_oxide v0.9.1
+[1m[92m  Downloaded[0m quote v1.0.47
+[1m[92m  Downloaded[0m gltf-derive v1.4.1
+[1m[92m  Downloaded[0m equivalent v1.0.2
+[1m[92m  Downloaded[0m ref-cast v1.0.27
+[1m[92m  Downloaded[0m ref-cast-impl v1.0.27
+[1m[92m  Downloaded[0m fdeflate v0.3.7
+[1m[92m  Downloaded[0m font-types v0.12.6
+[1m[92m  Downloaded[0m ordered-float v2.10.1
+[1m[92m  Downloaded[0m rustversion v1.0.23
+[1m[92m  Downloaded[0m serde_derive_internals v0.30.0
+[1m[92m  Downloaded[0m simd-adler32 v0.3.10
+[1m[92m  Downloaded[0m scopeguard v1.2.0
+[1m[92m  Downloaded[0m sha1 v0.11.0
+[1m[92m  Downloaded[0m gltf-json v1.4.1
+[1m[92m  Downloaded[0m inflections v1.1.1
+[1m[92m  Downloaded[0m multiversion_no_op v1.0.0
+[1m[92m  Downloaded[0m hybrid-array v0.4.15
+[1m[92m  Downloaded[0m byteorder-lite v0.1.0
+[1m[92m  Downloaded[0m flate2 v1.1.10
+[1m[92m  Downloaded[0m gethostname v1.1.0
+[1m[92m  Downloaded[0m itoa v1.0.18
+[1m[92m  Downloaded[0m serde-value v0.7.0
+[1m[92m  Downloaded[0m errno v0.3.14
+[1m[92m  Downloaded[0m sha2 v0.10.9
+[1m[92m  Downloaded[0m simdutf8 v0.1.5
+[1m[92m  Downloaded[0m generic-array v0.14.7
+[1m[92m  Downloaded[0m serde_path_to_error v0.1.20
+[1m[92m  Downloaded[0m schemars_derive v1.2.3
+[1m[92m  Downloaded[0m sha2 v0.11.1
+[1m[92m  Downloaded[0m fastrand v2.5.0
+[1m[92m  Downloaded[0m once_cell v1.21.4
+[1m[92m  Downloaded[0m getrandom v0.4.3
+[1m[92m  Downloaded[0m roxmltree v0.21.1
+[1m[92m  Downloaded[0m smallvec v1.16.2
+[1m[92m  Downloaded[0m tempfile v3.27.0
+[1m[92m  Downloaded[0m serde_core v1.0.229
+[1m[92m  Downloaded[0m gltf v1.4.1
+[1m[92m  Downloaded[0m num-traits v0.2.19
+[1m[92m  Downloaded[0m schemars v1.2.3
+[1m[92m  Downloaded[0m log v0.4.34
+[1m[92m  Downloaded[0m miniz_oxide v0.8.9
+[1m[92m  Downloaded[0m rayon-core v1.13.0
+[1m[92m  Downloaded[0m serde v1.0.229
+[1m[92m  Downloaded[0m cadmpeg-container v0.6.7
+[1m[92m  Downloaded[0m memchr v2.8.3
+[1m[92m  Downloaded[0m rayon v1.12.0
+[1m[92m  Downloaded[0m ruzstd v0.9.1
+[1m[92m  Downloaded[0m serde_json v1.0.151
+[1m[92m  Downloaded[0m indexmap v2.14.2
+[1m[92m  Downloaded[0m syn v2.0.119
+[1m[92m  Downloaded[0m hashbrown v0.16.1
+[1m[92m  Downloaded[0m quick-xml v0.41.0
+[1m[92m  Downloaded[0m encoding_rs v0.8.42
+[1m[92m  Downloaded[0m syn v3.0.6
+[1m[92m  Downloaded[0m harfrust v0.12.0
+[1m[92m  Downloaded[0m spade v2.15.1
+[1m[92m  Downloaded[0m rustix v1.1.5
+[1m[92m  Downloaded[0m robust v1.2.0
+[1m[92m  Downloaded[0m cadmpeg-codec-freecad v0.6.7
+[1m[92m  Downloaded[0m read-fonts v0.41.0
+[1m[92m  Downloaded[0m pxfm v0.1.30
+[1m[92m  Downloaded[0m libc v0.2.190
+[1m[92m  Downloaded[0m linux-raw-sys v0.12.1
+[1m[92m   Compiling[0m proc-macro2 v1.0.107
+[1m[92m   Compiling[0m quote v1.0.47
+[1m[92m   Compiling[0m unicode-ident v1.0.26
+[1m[92m   Compiling[0m serde_core v1.0.229
+[1m[92m   Compiling[0m cfg-if v1.0.5
+[1m[92m   Compiling[0m memchr v2.8.3
+[1m[92m   Compiling[0m zmij v1.0.23
+[1m[92m   Compiling[0m itoa v1.0.18
+[1m[92m   Compiling[0m serde_json v1.0.151
+[1m[92m   Compiling[0m serde v1.0.229
+[1m[92m   Compiling[0m syn v3.0.6
+[1m[92m   Compiling[0m thiserror v2.0.21
+[1m[92m   Compiling[0m typenum v1.20.1
+[1m[92m   Compiling[0m simd-adler32 v0.3.10
+[1m[92m   Compiling[0m crc32fast v1.5.2
+[1m[92m   Compiling[0m autocfg v1.5.1
+[1m[92m   Compiling[0m version_check v0.9.5
+[1m[92m   Compiling[0m generic-array v0.14.7
+[1m[92m   Compiling[0m adler2 v2.0.1
+[1m[92m   Compiling[0m num-traits v0.2.19
+[1m[92m   Compiling[0m miniz_oxide v0.9.1
+[1m[92m   Compiling[0m zlib-rs v0.6.8
+[1m[92m   Compiling[0m bitflags v2.13.2
+[1m[92m   Compiling[0m equivalent v1.0.2
+[1m[92m   Compiling[0m hybrid-array v0.4.15
+[1m[92m   Compiling[0m libc v0.2.190
+[1m[92m   Compiling[0m log v0.4.34
+[1m[92m   Compiling[0m getrandom v0.4.3
+[1m[92m   Compiling[0m crypto-common v0.2.2
+[1m[92m   Compiling[0m block-buffer v0.12.1
+[1m[92m   Compiling[0m once_cell v1.21.4
+[1m[92m   Compiling[0m flate2 v1.1.10
+[1m[92m   Compiling[0m hashbrown v0.17.1
+[1m[92m   Compiling[0m rustversion v1.0.23
+[1m[92m   Compiling[0m crossbeam-utils v0.8.23
+[1m[92m   Compiling[0m const-oid v0.10.2
+[1m[92m   Compiling[0m twox-hash v2.1.5
+[1m[92m   Compiling[0m digest v0.11.3
+[1m[92m   Compiling[0m ruzstd v0.9.1
+[1m[92m   Compiling[0m indexmap v2.14.2
+[1m[92m   Compiling[0m roxmltree v0.21.1
+[1m[92m   Compiling[0m rustix v1.1.5
+[1m[92m   Compiling[0m bumpalo v3.20.3
+[1m[92m   Compiling[0m serde_derive v1.0.229
+[1m[92m   Compiling[0m thiserror-impl v2.0.21
+[1m[92m   Compiling[0m bytemuck_derive v1.12.1
+[1m[92m   Compiling[0m crossbeam-epoch v0.9.21
+[1m[92m   Compiling[0m cpufeatures v0.3.1
+[1m[92m   Compiling[0m zopfli v0.8.3
+[1m[92m   Compiling[0m ordered-float v2.10.1
+[1m[92m   Compiling[0m bytemuck v1.25.2
+[1m[92m   Compiling[0m crossbeam-deque v0.8.8
+[1m[92m   Compiling[0m linux-raw-sys v0.12.1
+[1m[92m   Compiling[0m typed-path v0.13.0
+[1m[92m   Compiling[0m cpufeatures v0.2.17
+[1m[92m   Compiling[0m web-time v1.1.0
+[1m[92m   Compiling[0m zip v9.1.3
+[1m[92m   Compiling[0m encoding_rs v0.8.42
+[1m[92m   Compiling[0m sha2 v0.11.1
+[1m[92m   Compiling[0m syn v2.0.119
+[1m[92m   Compiling[0m solidcore-record v0.1.0 (https://github.com/tangency-labs/solidcore?rev=f5e8e9a29e0c9b7cf6c4040a5bc8878382b3c62f#f5e8e9a2)
+[1m[92m   Compiling[0m cadmpeg-core v0.6.7
+[1m[92m   Compiling[0m serde-value v0.7.0
+[1m[92m   Compiling[0m solidcraft-geom v0.40.0-rc.2 (/home/runner/work/solidcraft/solidcraft/crates/geom)
+[1m[92m   Compiling[0m smallvec v1.16.2
+[1m[92m   Compiling[0m base64 v0.23.1
+[1m[92m   Compiling[0m rayon-core v1.13.0
+[1m[92m   Compiling[0m cadmpeg-ir v0.6.7
+[1m[92m   Compiling[0m cadmpeg-container v0.6.7
+[1m[92m   Compiling[0m solidcraft-profile v0.40.0-rc.2 (/home/runner/work/solidcraft/solidcraft/crates/profile)
+[1m[92m   Compiling[0m block-buffer v0.10.4
+[1m[92m   Compiling[0m crypto-common v0.1.7
+[1m[92m   Compiling[0m font-types v0.12.6
+[1m[92m   Compiling[0m miniz_oxide v0.8.9
+[1m[92m   Compiling[0m fdeflate v0.3.7
+[1m[92m   Compiling[0m winnow v1.0.4
+[1m[92m   Compiling[0m pxfm v0.1.30
+[1m[92m   Compiling[0m allocator-api2 v0.2.21
+[1m[92m   Compiling[0m core_detect v1.0.0
+[1m[92m   Compiling[0m zune-core v0.5.3
+[1m[92m   Compiling[0m foldhash v0.2.0
+[1m[92m   Compiling[0m scopeguard v1.2.0
+[1m[92m   Compiling[0m multiversion_no_op v1.0.0
+[1m[92m   Compiling[0m fastrand v2.5.0
+[1m[92m   Compiling[0m simdutf8 v0.1.5
+[1m[92m   Compiling[0m moxcms v0.8.1
+[1m[92m   Compiling[0m tempfile v3.27.0
+[1m[92m   Compiling[0m hashbrown v0.16.1
+[1m[92m   Compiling[0m zune-jpeg v0.5.15
+[1m[92m   Compiling[0m toml_parser v1.1.5+spec-1.1.0
+[1m[92m   Compiling[0m png v0.18.1
+[1m[92m   Compiling[0m digest v0.10.7
+[1m[92m   Compiling[0m read-fonts v0.41.0
+[1m[92m   Compiling[0m solidcore v1.0.1 (https://github.com/tangency-labs/solidcore?rev=8ddce901671f1cebd9214a31d21895d725e886c8#8ddce901)
+[1m[92m   Compiling[0m toml_datetime v1.1.2+spec-1.1.0
+[1m[92m   Compiling[0m toml_writer v1.1.3+spec-1.1.0
+[1m[92m   Compiling[0m either v1.19.0
+[1m[92m   Compiling[0m robust v1.2.0
+[1m[92m   Compiling[0m inflections v1.1.1
+[1m[92m   Compiling[0m byteorder-lite v0.1.0
+[1m[92m   Compiling[0m image v0.25.10
+[1m[92m   Compiling[0m gltf-derive v1.4.1
+[1m[92m   Compiling[0m spade v2.15.1
+[1m[92m   Compiling[0m rayon v1.12.0
+[1m[92m   Compiling[0m harfrust v0.12.0
+[1m[92m   Compiling[0m sha2 v0.10.9
+[1m[92m   Compiling[0m solidcraft-step v0.40.0-rc.2 (/home/runner/work/solidcraft/solidcraft/crates/step)
+[1m[92m   Compiling[0m sha1 v0.11.0
+[1m[92m   Compiling[0m serde_spanned v1.1.2
+[1m[92m   Compiling[0m ref-cast v1.0.27
+[1m[92m   Compiling[0m solidcraft-doc v0.40.0-rc.2 (/home/runner/work/solidcraft/solidcraft/crates/doc)
+[1m[92m   Compiling[0m weezl v0.1.12
+[1m[92m   Compiling[0m unicode-bidi v0.3.18
+[1m[92m   Compiling[0m ttf-parser v0.25.1
+[1m[92m   Compiling[0m solidcraft-sketch v0.40.0-rc.2 (/home/runner/work/solidcraft/solidcraft/crates/sketch)
+[1m[92m   Compiling[0m solidcraft-render v0.40.0-rc.2 (/home/runner/work/solidcraft/solidcraft/crates/render)
+[1m[92m   Compiling[0m solidcraft-smlib v0.40.0-rc.2 (/home/runner/work/solidcraft/solidcraft/crates/smlib)
+[1m[92m   Compiling[0m solidcraft-kernel v0.40.0-rc.2 (/home/runner/work/solidcraft/solidcraft/crates/kernel)
+[1m[92m   Compiling[0m toml v1.1.8+spec-1.1.0
+[1m[92m   Compiling[0m cadmpeg-codec-rhino v0.6.7
+[1m[92m   Compiling[0m solidcraft-io v0.40.0-rc.2 (/home/runner/work/solidcraft/solidcraft/crates/io)
+[1m[92m   Compiling[0m gltf-json v1.4.1
+[1m[92m   Compiling[0m cadmpeg-codec-freecad v0.6.7
+[1m[92m   Compiling[0m cadmpeg-codec-step v0.6.7
+[1m[92m   Compiling[0m solidcraft-derive v0.40.0-rc.2 (/home/runner/work/solidcraft/solidcraft/crates/derive)
+[1m[92m   Compiling[0m ref-cast-impl v1.0.27
+[1m[92m   Compiling[0m serde_derive_internals v0.30.0
+[1m[92m   Compiling[0m byteorder v1.5.0
+[1m[92m   Compiling[0m lazy_static v1.5.1
+[1m[92m   Compiling[0m gltf v1.4.1
+[1m[92m   Compiling[0m schemars_derive v1.2.3
+[1m[92m   Compiling[0m cadmpeg-registry v0.6.7
+[1m[92m   Compiling[0m chardetng v0.1.17
+[1m[92m   Compiling[0m gethostname v1.1.0
+[1m[92m   Compiling[0m quick-xml v0.41.0
+[1m[92m   Compiling[0m dyn-clone v1.0.20
+[1m[92m   Compiling[0m schemars v1.2.3
+[1m[92m   Compiling[0m toml_edit v0.25.15+spec-1.1.0
+[1m[92m   Compiling[0m serde_path_to_error v0.1.20
+[1m[92m   Compiling[0m solidcraft-engine v0.40.0-rc.2 (/home/runner/work/solidcraft/solidcraft/crates/engine)
+[1m[92m    Finished[0m `test` profile [optimized + debuginfo] target(s) in 23m 41s
+[1m[92m     Running[0m unittests src/lib.rs (target/debug/deps/solidcraft_engine-d3c33041970fd8c9)
+
+running 1 test
+
+thread 'cmd::component_link::tests::an_inserted_design_measures_the_same_as_its_source' (6123) panicked at crates/engine/src/cmd/component_link.rs:1020:13:
+volume_mm3: source 1648847.549239596, inserted 1883250.7260523709
+source: {"bodies":[{"area_mm2":1268994.447538838,"bbox":{"max":[9090.908111624414,468.2,6488.874964498241],"min":[4793.646592375586,425.8,3722.983218501759]},"center_of_mass":[6942.274610480076,447.0000380860558,5105.928251320891],"closed":true,"density_g_cm3":1.29,"edges":6,"face_types":{"cylinder":2,"plane":2},"faces":4,"kernel":{"edges":6,"faces":4,"shells":1,"vertices":4},"mass_g":2127.013338519079,"material":"Default","measured_by":"smlib","name":"R","notes":[],"vertices":4,"volume_mm3":1648847.549239596}],"body_count":1,"total":{"area_mm2":1268994.447538838,"edges":6,"faces":4,"mass_g":2127.013338519079,"open_bodies_skipped":0,"vertices":4,"volume_mm3":1648847.549239596}}
+inserted: {"bodies":[{"area_mm2":1237386.1518414738,"bbox":{"max":[9090.908111624414,468.2,6488.874964498241],"min":[4793.646592375586,425.79999999999995,3722.9832185017594]},"center_of_mass":[4567.521147414618,445.02770175400394,4344.905662414911],"closed":true,"density_g_cm3":1.29,"edges":6,"face_types":{"cylinder":2,"plane":2},"faces":4,"kernel":{"edges":6,"faces":4,"shells":1,"vertices":4},"mass_g":2429.393436607558,"material":"Default","measured_by":"smlib","name":"R","notes":[],"vertices":4,"volume_mm3":1883250.7260523709}],"body_count":1,"total":{"area_mm2":1237386.1518414738,"edges":6,"faces":4,"mass_g":2429.393436607558,"open_bodies_skipped":0,"vertices":4,"volume_mm3":1883250.7260523709}}
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test cmd::component_link::tests::an_inserted_design_measures_the_same_as_its_source ... FAILED
+
+failures:
+
+failures:
+    cmd::component_link::tests::an_inserted_design_measures_the_same_as_its_source
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 3724 filtered out; finished in 0.15s
+
+[1m[91merror[0m: test failed, to rerun pass `-p solidcraft-engine --lib`
