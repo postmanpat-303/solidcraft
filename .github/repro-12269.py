@@ -120,7 +120,29 @@ call("ui.prefs", {"nav": "inventor", "radial_context_menu": True})
 call("ui.click", {"x": x, "y": y, "button": "right"})
 time.sleep(1)
 call("ui.screenshot", {"path": "shot-menu.png"})
+time.sleep(2)
 call("ui.menu", {"close": True})
+
+# The app writes relative screenshot paths into its own data folders, not the
+# workflow's working copy: find the PNG and copy it next to the repo so the
+# publish step can pick it up.
+import glob
+import shutil
+
+for pattern in [
+    os.path.expanduser("~/.local/share/solidcraft/**/shot-menu.png"),
+    os.path.expanduser("~/.config/solidcraft/**/shot-menu.png"),
+    "/tmp/**/shot-menu.png",
+    "**/shot-menu.png",
+]:
+    hits = [p for p in glob.glob(pattern, recursive=True) if os.path.isfile(p)]
+    if hits:
+        newest = max(hits, key=os.path.getmtime)
+        shutil.copy(newest, os.path.join(os.getcwd(), "shot-menu.png"))
+        print(f"screenshot copied from {newest}")
+        break
+else:
+    print("screenshot not found on disk")
 
 if not alive():
     crash("end of script")
