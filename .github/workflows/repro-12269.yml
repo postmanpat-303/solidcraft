@@ -24,7 +24,7 @@ jobs:
       - name: Run the repro test
         shell: pwsh
         run: |
-          cargo test --profile ci -p solidcraft-ui-egui inventor_right_click_on_a_body_opens_the_radial_menu -- --nocapture *> result.txt
+          cargo test --profile ci -p solidcraft-ui-egui context_menu:: -- --nocapture *> result.txt
           "exit=$LASTEXITCODE" | Out-File -Append result.txt
       - name: Publish result
         if: always()
