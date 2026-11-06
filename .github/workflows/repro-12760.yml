@@ -1,0 +1,33 @@
+name: repro-12760
+# Temporary workflow on the fork only: run the new regression test for #12760
+# (inserted design measures the same as its source) and publish the output.
+on:
+  push:
+    branches: [fix/12760-insert-volume]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repro:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          key: repro-12760
+      - name: Run the regression test
+        run: cargo test -p solidcraft-engine an_inserted_design_measures_the_same_as_its_source -- --nocapture --exact cmd::component_link::tests::an_inserted_design_measures_the_same_as_its_source 2>&1 | tee result.txt
+      - name: Publish result
+        if: always()
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "github-actions"
+          git fetch origin repro-12760-result || true
+          if git rev-parse --verify --quiet FETCH_HEAD; then git checkout -B repro-12760-result FETCH_HEAD; else git checkout -B repro-12760-result; fi
+          git add -f result.txt || true
+          git commit -m "repro-12760 result" || true
+          git push -f origin repro-12760-result
