@@ -1,0 +1,87 @@
+> engine.execute {"command": "solid.cylinder", "params": {"diameter": 30, "height": 20}}
+< {"id":85995,"ok":true,"result":{"bodies":["Plate","Body1"],"changed_bodies":[],"created_bodies":["Body1"],"feature":10,"ms":43.218990999999995,"name":"Cylinder1","removed_bodies":[],"warning":null}}
+> ui.prefs {"radial_context_menu": true, "ui_scale": 2.5}
+< {"id":86286,"ok":true,"result":{"agent_always_allow":{},"agent_chat_minimized":false,"agent_chat_open_at_start":false,"agent_chat_popped":false,"agent_chat_side":"right","agent_chat_turn_limit":0,"agent_chat_width":380.0,"agent_chat_window":null,"agent_connect_at_start":false,"agent_control":true,"agent_default":"","agent_instructions":"","agent_last":"","agent_models":{},"agent_off_thread":false,"agent_permissions":{},"agents":[],"ai_features":true,"ai_permissions":"edits","ai_toolbar_button":true,"ambient_occlusion":false,"angle_decimals":1,"apply_enabled":false,"assembly_move_handles":true,"auto_operation":true,"background_image":"","browser_bodies_folders":"several","browser_collapsed":false,"browser_components_open":false,"browser_eye_left":false,"browser_float":false,"browser_rows_st
+> ui.camera {"fit": true}
+< {"id":87793,"ok":true,"result":{"distance":142.63151421914955,"fov":0.0,"pitch":0.6154797086703874,"roll":0.0,"target":[20.953410996467706,7.255427509799784,12.302016513332076],"up":"z","yaw":-0.7853981633974483}}
+> ui.at {"world": [15, 0, 10]}
+< {"id":89927,"ok":true,"result":[290.0411376953125,224.73387145996094]}
+body side surface sits at screen point (290.0411376953125, 224.73387145996094)
+> ui.prefs {"nav": "inventor", "radial_context_menu": true}
+< {"id":89928,"ok":true,"result":{"agent_always_allow":{},"agent_chat_minimized":false,"agent_chat_open_at_start":false,"agent_chat_popped":false,"agent_chat_side":"right","agent_chat_turn_limit":0,"agent_chat_width":380.0,"agent_chat_window":null,"agent_connect_at_start":false,"agent_control":true,"agent_default":"","agent_instructions":"","agent_last":"","agent_models":{},"agent_off_thread":false,"agent_permissions":{},"agents":[],"ai_features":true,"ai_permissions":"edits","ai_toolbar_button":true,"ambient_occlusion":false,"angle_decimals":1,"apply_enabled":false,"assembly_move_handles":true,"auto_operation":true,"background_image":"","browser_bodies_folders":"several","browser_collapsed":false,"browser_components_open":false,"browser_eye_left":false,"browser_float":false,"browser_rows_st
+> ui.click {"x": 290.0411376953125, "y": 224.73387145996094, "button": "right"}
+< {"id":89967,"ok":true,"result":null}
+> ui.menu null
+< {"id":90999,"ok":true,"result":{"at":[290.0411376953125,224.73387145996094],"items":[{"enabled":true,"icon":"select","id":"ui.selectOther","label":"Select Other…","placeholder":false,"shortcut":"Hold click"},{"enabled":false,"icon":"","id":"-","label":"","placeholder":false,"shortcut":""},{"enabled":true,"icon":"sketch","id":"sketch.create","label":"Create Sketch","placeholder":false,"shortcut":""},{"enabled":true,"icon":"extrude","id":"solid.extrude","label":"Extrude","placeholder":false,"shortcut":"E"},{"enabled":true,"icon":"plane","id":"construct.plane.offset","label":"Offset Plane","placeholder":false,"shortcut":""},{"enabled":true,"icon":"shell","id":"solid.shell","label":"Shell","placeholder":false,"shortcut":""},{"enabled":true,"icon":"edit","id":"ui.editFeature","label":"Edit Feat
+> ui.menu {"close": true}
+< {"id":91000,"ok":true,"result":{"open":false}}
+> ui.drag {"x0": 290.0411376953125, "y0": 224.73387145996094, "x1": 293.0411376953125, "y1": 227.73387145996094, "button": "right", "hold": 45}
+< {"id":91044,"ok":true,"result":null}
+> ui.menu null
+< {"id":92075,"ok":true,"result":{"at":[290.0411376953125,224.73387145996094],"items":[{"enabled":true,"icon":"sketch","id":"sketch.create","label":"Create Sketch","placeholder":false,"shortcut":""},{"enabled":true,"icon":"extrude","id":"solid.extrude","label":"Extrude","placeholder":false,"shortcut":"E"},{"enabled":true,"icon":"plane","id":"construct.plane.offset","label":"Offset Plane","placeholder":false,"shortcut":""},{"enabled":true,"icon":"shell","id":"solid.shell","label":"Shell","placeholder":false,"shortcut":""},{"enabled":true,"icon":"edit","id":"ui.editFeature","label":"Edit Feature","params":{"feature":10},"placeholder":false,"shortcut":""},{"enabled":false,"icon":"sketch","id":"ui.editSketch","label":"Edit Profile Sketch","params":{"sketch":null},"placeholder":false,"shortcut":"
+> ui.menu {"close": true}
+< {"id":92109,"ok":true,"result":{"open":false}}
+OK: inventor survived both gestures
+> ui.prefs {"nav": "fusion", "radial_context_menu": true}
+< {"id":92152,"ok":true,"result":{"agent_always_allow":{},"agent_chat_minimized":false,"agent_chat_open_at_start":false,"agent_chat_popped":false,"agent_chat_side":"right","agent_chat_turn_limit":0,"agent_chat_width":380.0,"agent_chat_window":null,"agent_connect_at_start":false,"agent_control":true,"agent_default":"","agent_instructions":"","agent_last":"","agent_models":{},"agent_off_thread":false,"agent_permissions":{},"agents":[],"ai_features":true,"ai_permissions":"edits","ai_toolbar_button":true,"ambient_occlusion":false,"angle_decimals":1,"apply_enabled":false,"assembly_move_handles":true,"auto_operation":true,"background_image":"","browser_bodies_folders":"several","browser_collapsed":false,"browser_components_open":false,"browser_eye_left":false,"browser_float":false,"browser_rows_st
+> ui.click {"x": 290.0411376953125, "y": 224.73387145996094, "button": "right"}
+< {"id":92185,"ok":true,"result":null}
+> ui.menu null
+< {"id":93217,"ok":true,"result":{"open":false,"pending":false}}
+> ui.menu {"close": true}
+< {"id":93242,"ok":true,"result":{"open":false}}
+> ui.drag {"x0": 290.0411376953125, "y0": 224.73387145996094, "x1": 293.0411376953125, "y1": 227.73387145996094, "button": "right", "hold": 45}
+< {"id":93326,"ok":true,"result":null}
+> ui.menu null
+< {"id":94411,"ok":true,"result":{"at":[290.0411376953125,224.73387145996094],"items":[{"enabled":true,"icon":"select","id":"ui.selectOther","label":"Select Other…","placeholder":false,"shortcut":"Hold click"},{"enabled":false,"icon":"","id":"-","label":"","placeholder":false,"shortcut":""},{"enabled":true,"icon":"sketch","id":"sketch.create","label":"Create Sketch","placeholder":false,"shortcut":""},{"enabled":true,"icon":"extrude","id":"solid.extrude","label":"Extrude","placeholder":false,"shortcut":"E"},{"enabled":true,"icon":"plane","id":"construct.plane.offset","label":"Offset Plane","placeholder":false,"shortcut":""},{"enabled":true,"icon":"shell","id":"solid.shell","label":"Shell","placeholder":false,"shortcut":""},{"enabled":true,"icon":"edit","id":"ui.editFeature","label":"Edit Feat
+> ui.menu {"close": true}
+< {"id":94416,"ok":true,"result":{"open":false}}
+OK: fusion survived both gestures
+> ui.prefs {"nav": "blender", "radial_context_menu": true}
+< {"id":94458,"ok":true,"result":{"agent_always_allow":{},"agent_chat_minimized":false,"agent_chat_open_at_start":false,"agent_chat_popped":false,"agent_chat_side":"right","agent_chat_turn_limit":0,"agent_chat_width":380.0,"agent_chat_window":null,"agent_connect_at_start":false,"agent_control":true,"agent_default":"","agent_instructions":"","agent_last":"","agent_models":{},"agent_off_thread":false,"agent_permissions":{},"agents":[],"ai_features":true,"ai_permissions":"edits","ai_toolbar_button":true,"ambient_occlusion":false,"angle_decimals":1,"apply_enabled":false,"assembly_move_handles":true,"auto_operation":true,"background_image":"","browser_bodies_folders":"several","browser_collapsed":false,"browser_components_open":false,"browser_eye_left":false,"browser_float":false,"browser_rows_st
+> ui.click {"x": 290.0411376953125, "y": 224.73387145996094, "button": "right"}
+< {"id":94489,"ok":true,"result":null}
+> ui.menu null
+< {"id":95520,"ok":true,"result":{"open":false,"pending":false}}
+> ui.menu {"close": true}
+< {"id":95537,"ok":true,"result":{"open":false}}
+> ui.drag {"x0": 290.0411376953125, "y0": 224.73387145996094, "x1": 293.0411376953125, "y1": 227.73387145996094, "button": "right", "hold": 45}
+< {"id":95567,"ok":true,"result":null}
+> ui.menu null
+< {"id":96603,"ok":true,"result":{"at":[290.0411376953125,224.73387145996094],"items":[{"enabled":true,"icon":"select","id":"ui.selectOther","label":"Select Other…","placeholder":false,"shortcut":"Hold click"},{"enabled":false,"icon":"","id":"-","label":"","placeholder":false,"shortcut":""},{"enabled":true,"icon":"sketch","id":"sketch.create","label":"Create Sketch","placeholder":false,"shortcut":""},{"enabled":true,"icon":"extrude","id":"solid.extrude","label":"Extrude","placeholder":false,"shortcut":"E"},{"enabled":true,"icon":"plane","id":"construct.plane.offset","label":"Offset Plane","placeholder":false,"shortcut":""},{"enabled":true,"icon":"shell","id":"solid.shell","label":"Shell","placeholder":false,"shortcut":""},{"enabled":true,"icon":"edit","id":"ui.editFeature","label":"Edit Feat
+> ui.menu {"close": true}
+< {"id":96622,"ok":true,"result":{"open":false}}
+OK: blender survived both gestures
+> ui.prefs {"nav": "nx", "radial_context_menu": true}
+< {"id":96678,"ok":true,"result":{"agent_always_allow":{},"agent_chat_minimized":false,"agent_chat_open_at_start":false,"agent_chat_popped":false,"agent_chat_side":"right","agent_chat_turn_limit":0,"agent_chat_width":380.0,"agent_chat_window":null,"agent_connect_at_start":false,"agent_control":true,"agent_default":"","agent_instructions":"","agent_last":"","agent_models":{},"agent_off_thread":false,"agent_permissions":{},"agents":[],"ai_features":true,"ai_permissions":"edits","ai_toolbar_button":true,"ambient_occlusion":false,"angle_decimals":1,"apply_enabled":false,"assembly_move_handles":true,"auto_operation":true,"background_image":"","browser_bodies_folders":"several","browser_collapsed":false,"browser_components_open":false,"browser_eye_left":false,"browser_float":false,"browser_rows_st
+> ui.click {"x": 290.0411376953125, "y": 224.73387145996094, "button": "right"}
+< {"id":96717,"ok":true,"result":null}
+> ui.menu null
+< {"id":97719,"ok":true,"result":{"open":false,"pending":false}}
+> ui.menu {"close": true}
+< {"id":97741,"ok":true,"result":{"open":false}}
+> ui.drag {"x0": 290.0411376953125, "y0": 224.73387145996094, "x1": 293.0411376953125, "y1": 227.73387145996094, "button": "right", "hold": 45}
+< {"id":97779,"ok":true,"result":null}
+> ui.menu null
+< {"id":98821,"ok":true,"result":{"open":false,"pending":false}}
+> ui.menu {"close": true}
+< {"id":98827,"ok":true,"result":{"open":false}}
+OK: nx survived both gestures
+> ui.prefs {"nav": "inventor", "radial_context_menu": true}
+< {"id":98931,"ok":true,"result":{"agent_always_allow":{},"agent_chat_minimized":false,"agent_chat_open_at_start":false,"agent_chat_popped":false,"agent_chat_side":"right","agent_chat_turn_limit":0,"agent_chat_width":380.0,"agent_chat_window":null,"agent_connect_at_start":false,"agent_control":true,"agent_default":"","agent_instructions":"","agent_last":"","agent_models":{},"agent_off_thread":false,"agent_permissions":{},"agents":[],"ai_features":true,"ai_permissions":"edits","ai_toolbar_button":true,"ambient_occlusion":false,"angle_decimals":1,"apply_enabled":false,"assembly_move_handles":true,"auto_operation":true,"background_image":"","browser_bodies_folders":"several","browser_collapsed":false,"browser_components_open":false,"browser_eye_left":false,"browser_float":false,"browser_rows_st
+> ui.click {"x": 290.0411376953125, "y": 224.73387145996094, "button": "right"}
+< {"id":99035,"ok":true,"result":null}
+> ui.screenshot {"path": "shot-menu.png"}
+< {"id":156,"ok":true,"result":{"height":1000,"path":"shot-menu.png","width":1600}}
+> ui.menu {"close": true}
+< {"id":2559,"ok":true,"result":{"open":false}}
+Traceback (most recent call last):
+  File "/home/runner/work/solidcraft/solidcraft/.github/repro-12269.py", line 141, in <module>
+    shutil.copy(newest, os.path.join(os.getcwd(), "shot-menu.png"))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/shutil.py", line 489, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/shutil.py", line 293, in copyfile
+    raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+shutil.SameFileError: 'shot-menu.png' and '/home/runner/work/solidcraft/solidcraft/shot-menu.png' are the same file
