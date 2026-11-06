@@ -14,7 +14,7 @@ import sys
 import time
 
 PORT = 7707
-TOKEN = os.environ.get("SOLIDCRAFT_CONTROL_TOKEN", "")
+TOKEN_FILE = os.path.expanduser(f"~/.local/share/solidcraft/control/{PORT}.token")
 
 app_log = open("app.log", "w")
 app = subprocess.Popen(
@@ -40,15 +40,20 @@ def crash(where):
     sys.exit(1)
 
 
+token = None
 sock = None
 for _ in range(90):
     if not alive():
         crash("startup")
     try:
-        sock = socket.create_connection(("127.0.0.1", PORT), timeout=10)
-        break
+        with open(TOKEN_FILE) as fh:
+            token = fh.read().strip() or None
+        if token:
+            sock = socket.create_connection(("127.0.0.1", PORT), timeout=10)
+            break
     except OSError:
-        time.sleep(2)
+        pass
+    time.sleep(2)
 if sock is None:
     print("FAIL: the control socket never came up")
     app_log.flush()
@@ -64,14 +69,20 @@ def call(method, params=None):
     global first
     req = {"id": int(time.time() * 1000) % 100000, "method": method, "params": params or {}}
     if first:
-        req["token"] = TOKEN
+        req["token"] = token
         first = False
     conn.write(json.dumps(req) + "\n")
     conn.flush()
     line = conn.readline()
     print(f"> {method} {json.dumps(params)}")
     if not line:
-        crash(method)
+        if not alive():
+            crash(method)
+        print(f"FAIL: the control connection closed during {method} but the app is still running")
+        app_log.flush()
+        with open("app.log") as fh:
+            print(fh.read()[-4000:])
+        sys.exit(2)
     print(f"< {line.strip()[:800]}")
     if not alive():
         crash(method)

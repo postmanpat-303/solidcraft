@@ -11,9 +11,6 @@ on:
 permissions:
   contents: write
 
-env:
-  SOLIDCRAFT_CONTROL_TOKEN: repro-12269-token
-
 jobs:
   repro:
     runs-on: ubuntu-latest
